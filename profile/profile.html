@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="../home/index.html">
+            <img src="img/fatec_logo.png" alt="Logo">
+        </a>
+        <div class="user-dropdown">
+            <button class="user-photo" onclick="toggleDropdown(event)">
+                <img src="img/gato_photo.jpeg" alt="">
+            </button>
+            <div class="dropdown-content">
+                <a href="profile.html">Seu perfil</a>
+                <a href="../login/login.html">Sair da conta</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        
+        <!-- Área de Informações do Aluno -->
+        <div class="student-info">
+            <div class="profile-pic">
+                <img src="img/gato_photo.jpeg" alt="">
+            </div>
+            <div class="student-data">
+                <h2>Aluno Tal</h2>
+                <p>Dados</p>
+            </div>
+        </div>
+
+        <!-- Área Principal -->
+        <div class="main-content">
+            <div class="requirements-status">
+                <table class="requirements-status-table">
+                    <tr>
+                        <td class="requirements">
+                            <h3>Requerimentos</h3>
+                            <div class="requirements-text">
+                                <p style="background-color: blue">Requerimento 1</p>
+                                <p>Requerimento 2</p>
+                                <p>Requerimento 3</p>
+                                <p>Requerimento 4</p>
+                            </div>
+                        </td>
+                        <td class="status">
+                            <h3>Status</h3>
+                            <div class="status-text">
+                                <p style="background-color: green">Feito</p>
+                                <p style="background-color: yellow">Em andamento</p>
+                                <p style="background-color: grey">Aguardando confirmação</p>
+                                <p style="background-color: red">Possui falha</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="history">
+                <h3>Histórico</h3>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© Copyright 2024. Fatec Guarulhos - Fone:(11) 2229-0392 / (11) 2229-0393</p>
+    </footer>
+
+    <script>
+        function toggleDropdown(event) {
+            event.stopPropagation(); // Previne que o clique feche o dropdown
+            var dropdown = document.querySelector(".dropdown-content");
+            dropdown.classList.toggle("show");
+        }
+    
+        // Fecha o dropdown se o usuário clicar fora dele
+        window.onclick = function(event) {
+            if (!event.target.matches('.user-photo')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

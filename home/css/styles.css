@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #8C0303;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header img {
+    width: 130px;
+    height: 60px;
+}
+
+.user-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user-dropdown {
+    position: relative; /* Necessário para posicionar o dropdown */
+}
+
+.dropdown-content {
+    display: none; /* Esconde o dropdown inicialmente */
+    position: absolute;
+    right: 0; /* Alinha o dropdown à direita */
+    background-color: white; /* Cor de fundo do dropdown */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para o dropdown */
+    z-index: 1; /* Certifica que o dropdown fique acima de outros elementos */
+    min-width: 150px; /* Largura mínima do dropdown */
+}
+
+.dropdown-content a {
+    color: #333; /* Cor do texto dos links */
+    padding: 12px 16px; /* Espaçamento interno */
+    text-decoration: none; /* Remove sublinhado */
+    display: block; /* Faz cada link ocupar uma linha inteira */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para mostrar o dropdown */
+.show {
+    display: block; /* Exibe o dropdown */
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+}
+
+.section {
+    background-color: #8C0303;
+    padding: 20px;
+    flex-basis: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+}
+
+.section h2 {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.section a {
+    text-align: start;
+    color: white;
+    font-size: 16px;
+}
+
+.footer {
+    background-color: #8C0303;
+    text-align: center;
+    padding: 15px;
+    color: white;
+}
+
+.form-links-container {
+    overflow-y: auto;
+    max-height: 500px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-links {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    margin: 0;
+}
+
+.form-links li {
+    margin-bottom: 10px;
+}
+
+.form-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
+/* CSS para o carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.carousel-images {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #717171;
+}

@@ -1,0 +1,144 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E0E0E0;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    height: 600px;
+    align-items: stretch;
+}
+
+.left-section {
+    flex-basis: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-box {
+    background-color: #8C0303;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.right-section {
+    flex-basis: 50%;
+    background-color: #8C0303;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.right-section img {
+    width: 50%;
+    height: 25%;
+    object-fit: fill; /* Faz com que a imagem ocupe todo o espaço, sem cortar */
+    object-position: center; /* Centraliza a imagem */
+    display: block;
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+    }
+
+    .left-section, .right-section {
+        flex-basis: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+
+    .login-box {
+        flex: 1;
+        width: 90%; /* Reduz o tamanho da caixa de login em telas menores */
+        max-width: 300px; /* Limita a largura máxima em telas pequenas */
+        min-width: 200px; /* Define uma largura mínima */
+        height: auto; /* Ajusta a altura automaticamente */
+        padding: 20px;
+    }
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.image-placeholder {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E0E0E0;
+}
+
+.error-link:hover {
+    color: #E0E0E0;
+}
+
+.error-link {
+    margin: 0px 0px 20px 0px;
+    color: white;
+    text-align: right;
+    align-self: flex-end;
+    text-decoration: none;
+    font-weight: bold;
+}

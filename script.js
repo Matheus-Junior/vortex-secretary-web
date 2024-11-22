@@ -3,54 +3,59 @@
 
 // ================================================ Funções para obter os dados profile ================================================
 
-// Fazendo a requisição para pegar os dados em formato JSON (por enquanto, é só um arquivo imaginário)
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // Fazendo a requisição para pegar os dados em formato JSON (por enquanto, é só um arquivo imaginário)
 fetch('dados_aluno.php') // Aqui só tô fingindo que tem uma conexão com o servidor
-    .then(response => response.json()) // Transformando a resposta em JSON
-    .then(data => {
-        // Preenchendo as informações na página com os dados que vieram do JSON
-        document.getElementById("student-name").textContent = data.aluno.nome;
-        document.getElementById("student-course").textContent = `CURSO: ${data.aluno.curso}`;
-        document.getElementById("student-email").textContent = `EMAIL: ${data.aluno.email}`;
-        document.querySelector('.profile-pic img').src = data.aluno.imagem_url; // Colocando a foto do aluno pelo php
+.then(response => response.json()) // Transformando a resposta em JSON
+.then(data => {
+    // Preenchendo as informações na página com os dados que vieram do JSON
+    document.getElementById("student-name").textContent = data.aluno.nome;
+    document.getElementById("student-course").textContent = `CURSO: ${data.aluno.curso}`;
+    document.getElementById("student-email").textContent = `EMAIL: ${data.aluno.email}`;
+    document.querySelector('.profile-pic img').src = data.aluno.imagem_url; // Colocando a foto do aluno pelo php
 
-        // Preenchendo os requisitos 
-        const requirementsContainer = document.getElementById("requirements-container");
-        data.requerimentos.forEach(req => {
-            const requirementElement = document.createElement("div");
-            requirementElement.classList.add("requirement-status-pair");
+    // Preenchendo os requisitos 
+    const requirementsContainer = document.getElementById("requirements-container");
+    data.requerimentos.forEach(req => {
+        const requirementElement = document.createElement("div");
+        requirementElement.classList.add("requirement-status-pair");
 
-            const requirementTitle = document.createElement("p");
-            requirementTitle.classList.add("requirement");
-            requirementTitle.textContent = req.nome;
+        const requirementTitle = document.createElement("p");
+        requirementTitle.classList.add("requirement");
+        requirementTitle.textContent = req.nome;
 
-            const requirementStatus = document.createElement("p");
-            requirementStatus.classList.add(`status-${getStatusClass(req.status)}`);
-            requirementStatus.textContent = req.status;
+        const requirementStatus = document.createElement("p");
+        requirementStatus.classList.add(`status-${getStatusClass(req.status)}`);
+        requirementStatus.textContent = req.status;
 
-            requirementElement.appendChild(requirementTitle);
-            requirementElement.appendChild(requirementStatus);
+        requirementElement.appendChild(requirementTitle);
+        requirementElement.appendChild(requirementStatus);
 
-            requirementsContainer.appendChild(requirementElement);
+        requirementsContainer.appendChild(requirementElement);
 
-            // O histórico é criaod com base nos requisitos que chegam
-            const historyList = document.getElementById("history-list");
-            const historyItem = document.createElement("li");
-            historyItem.textContent = `${req.nome} - ${req.status}`; // Título e status do requisito aqui
-            historyList.appendChild(historyItem); // Coloca no histórico 
-        });
-    })
-    .catch(error => console.error('Deu erro ao tentar carregar os dados... tipo, claro!', error));
+        // O histórico é criaod com base nos requisitos que chegam
+        const historyList = document.getElementById("history-list");
+        const historyItem = document.createElement("li");
+        historyItem.textContent = `${req.nome} - ${req.status}`; // Título e status do requisito aqui
+        historyList.appendChild(historyItem); // Coloca no histórico 
+    });
+})
+.catch(error => console.error('Deu erro ao tentar carregar os dados... tipo, claro!', error));
 
 // Função para mapear o status e colocar as classes CSS certas 
 function getStatusClass(status) {
-    switch(status) {
-        case 'Feito': return 'done';
-        case 'Em andamento': return 'in-progress';
-        case 'Aguardando confirmação': return 'awaiting';
-        case 'Possui falha': return 'failed';
-        default: return 'unknown'; // Vai que
-    }
+switch(status) {
+    case 'Feito': return 'done';
+    case 'Em andamento': return 'in-progress';
+    case 'Aguardando confirmação': return 'awaiting';
+    case 'Possui falha': return 'failed';
+    default: return 'unknown'; // Vai que
 }
+}
+
+});
 
 
 /*  NÃO ESTÁ SENDO USADO AINDA

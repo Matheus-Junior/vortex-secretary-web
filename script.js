@@ -4,12 +4,75 @@
 // ================================================ Funções para obter os dados profile ================================================
 
 
-fetch('dados_aluno.json')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data); // Aqui você pode manipular os dados recebidos
-  })
-  .catch(error => console.error('Erro ao carregar os dados:', error));
+// Dados do aluno embutidos no script, apenas para exemplo enquanto não há ligação backend
+const data = {
+    "aluno": {
+        "nome": "Aluno Tal",
+        "curso": "Engenharia de Software",
+        "email": "aluno@fatec.edu.br",
+        "imagem_url": "img/123.jpg"
+    },
+    "requerimentos": [
+        {
+            "nome": "Requerimento 1",
+            "status": "Feito"
+        },
+        {
+            "nome": "Requerimento 2",
+            "status": "Em andamento"
+        },
+        {
+            "nome": "Requerimento 3",
+            "status": "Aguardando confirmação"
+        },
+        {
+            "nome": "Requerimento 4",
+            "status": "Possui falha"
+        }
+    ]
+};
+
+// Preenchendo informações do aluno
+document.getElementById("student-name").textContent = data.aluno.nome;
+document.getElementById("student-course").textContent = `CURSO: ${data.aluno.curso}`;
+document.getElementById("student-email").textContent = `EMAIL: ${data.aluno.email}`;
+document.querySelector('.profile-pic img').src = data.aluno.imagem_url;
+
+// Preenchendo os requerimentos
+const requirementsContainer = document.getElementById("requirements-container");
+const historyList = document.getElementById("history-list");
+
+data.requerimentos.forEach(req => {
+    // Criando elemento para os requerimentos
+    const requirementElement = document.createElement("div");
+    requirementElement.classList.add("requirement-status-pair");
+
+    const requirementTitle = document.createElement("p");
+    requirementTitle.classList.add("requirement");
+    requirementTitle.textContent = req.nome;
+
+    const requirementStatus = document.createElement("p");
+    requirementStatus.classList.add(`status-${getStatusClass(req.status)}`);
+    requirementStatus.textContent = req.status;
+
+    requirementElement.appendChild(requirementTitle);
+    requirementElement.appendChild(requirementStatus);
+    requirementsContainer.appendChild(requirementElement);
+
+    // Adicionando ao histórico
+    const historyItem = document.createElement("li");
+    historyItem.textContent = `${req.nome} - ${req.status}`;
+    historyList.appendChild(historyItem);
+});
+
+function getStatusClass(status) {
+    if (status === "Feito") return "done";
+    if (status === "Em andamento") return "in-progress";
+    if (status === "Aguardando confirmação") return "awaiting";
+    if (status === "Possui falha") return "failed";
+    return "default";
+  }
+  
 
 
 /* 

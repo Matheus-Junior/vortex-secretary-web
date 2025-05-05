@@ -40,7 +40,6 @@ body {
     font-size: 12px;
 }
 
-
 /* Header das páginas*/
 header {
     display: flex;
@@ -48,58 +47,33 @@ header {
     align-items: center;
     padding: 0px 20px;
     background-color: var(--primary-color);
+    color: white;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
 }
 
 header img {
-    height: 70px;
+    height: 60px;
+    width: auto;
 }
 
-.user-dropdown {
-    position: relative;
+
+/* Ajustes no Botão de Logout */
+header a[title="Sair"] {
+    font-size: 24px;
+    margin-left: 20px;
+    color: white;
 }
 
-.user-photo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px white; /* Remove a borda */
+header a[title="Sair"]:hover {
+    color: #FFD700;
 }
-
-.user-photo img {
-    width: 150%;
-    height: 150%;
-    object-fit: cover; /* Garantir que a imagem preencha o espaço do círculo */
-}
-
-.user-dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: var(--primary-color);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.user-dropdown .dropdown-content a {
-    color: rgb(255, 255, 255);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.user-dropdown .dropdown-content a:hover {
-    background-color: #7E0000;
-}
-
-.user-dropdown .show {
-    display: block;
-}
-
 
 /* ================================================
    Estilos Globais para Todos os Tipos de Página 
@@ -119,7 +93,7 @@ a {
 /* Seção esquerda*/
 .left-section {
     background-color: var(--background-color);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,14 +101,14 @@ a {
 
 /* Seção direita*/
 .right-section {
-    height: 100vh;
+    height: auto;
     background-color: var(--primary-color);
     display: flex;
 }
 
 .login-box {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -200,6 +174,32 @@ a {
 }
 
 
+/* Estilização dos campos <select> */
+.login-box select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 16px;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    appearance: none; /* remove o estilo padrão do sistema */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23333' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.login-box select:focus {
+    border-color: var(--btn-color);
+    outline: none;
+}
+
+
 /* ========================================
    Estilos Específicos para a Página Home
 ===========================================*/
@@ -217,21 +217,28 @@ a {
     border-radius: 10px;
     box-shadow: 7px 5px 24px -14px #000000;
     background-color: var(--primary-color);
+    color: white;
 }
 
 .form-section{
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 7px 5px 24px -14px #000000;
+    min-height: 80vh;
 }
 
 .main h2 {
     margin-bottom: 15px;
     text-transform: uppercase;
+    color: var(--primary-color);
 }
 
-.aside-section{
-    color: white;
+.carousel-inner{
+    text-align: center;
+}
+
+.carousel-item{
+    padding-bottom: 70px;
 }
 
 .form-links-container {
@@ -268,49 +275,12 @@ a {
     color: white;
 }
 
-/* Carrossel - Home */
-.carousel {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.carousel-images {
-    display: flex;
-    transition: transform 1s ease;
-    border: solid 2px var(--primary-color);
-}
-
-.carousel-image {
-    width: 100%;
-    height: 23rem;  /* Definir altura para que as imagens se ajustem corretamente */
-    object-fit: cover;
-    display: none;
-}
-
-.carousel-image.active {
-    display: block;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.indicator {
-    width: 10px;
-    height: 10px;
-    background-color: #bbb;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.indicator.active {
-    background-color: var(--btn-color);
+.send-question{
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 7px 5px 24px -14px #000000;
+    background-color: var(--primary-color);
+    color: white;
 }
 
 /* Responsividade para telas pequenas */
@@ -346,7 +316,8 @@ a {
 }
 
 .profile-pic {
-    width: auto;
+    width: 10rem;
+    height: 10rem;
     border-radius: 100%;
     overflow: hidden;
     border: 2px solid white;
@@ -354,6 +325,8 @@ a {
 
 .profile-pic img {
     object-fit: cover;
+    width: 10rem;
+    height: 10rem;
 }
 
 .student-data {
@@ -491,4 +464,59 @@ a {
         align-items: center;
     }
 
+}
+
+/* =============================================
+   Estilos Específicos para a Página de enviar dúvidas
+================================================ */
+
+.ask-form{
+    margin: 0 auto;
+}
+
+.ask-form form{
+    padding: 20px 30px;
+}
+
+.btn-link-secondary{
+    padding: 8px 16px;
+    background-color: #D32719;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-link-secondary:hover, .btn-ask:hover{
+    background-color: var(--primary-color);
+}
+
+
+.btn-ask{
+    width: 100%;
+    padding: 8px 16px;
+    background-color: #D32719;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.notice{
+    margin: 0 auto;
+    background-color: rgba(172, 51, 51, 0.386);
+    color: var(--primary-color);
+}
+
+.wrapper {
+    height: 90vh; /* altura total da tela */
+    display: flex;
+    justify-content: center; /* centraliza na horizontal */
+    align-items: center;     /* centraliza na vertical */
+}
+
+.wrapper-login {
+    height: 100vh; /* altura total da tela */
+}
+
+#historicoCarousel .carousel-indicators button{
+    background-color: var(--primary-color)
 }

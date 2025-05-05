@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Histórico da Dúvida</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+    <!-- Seu CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="d-flex align-items-center">
+            <img src="img/fatec_logo.png" alt="Logo" width="80">
+        </div>
+        <nav class="nav-links">
+            <a href="#">INÍCIO</a>
+            <a href="#">TIRAR DÚVIDAS</a>
+            <a href="#">F.A.Q</a>
+            <a href="#">MEU PERFIL</a>
+            <a href="#" title="Sair"><i class="fas fa-sign-out-alt"></i></a>
+        </nav>
+    </header>
+
+    <div class="wrapper d-flex justify-content-center align-items-center">
+        <!-- Conteúdo principal -->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+
+                <!-- Carrossel lateral -->
+                <div class="col-md-4">
+                    <div id="historicoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                        <!-- Bolinhas indicadoras -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#faqCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#faqCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        </div>
+
+                        <div class="carousel-inner notice border rounded">
+
+                            <div class="carousel-item active">
+                                <div class="p-1 ">
+                                    <label class="fw-bold pt-2 pb-3">&lt;Usuário&gt;</label>
+                                    <p class="pt-4">Texto com a primeira mensagem de dúvida</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="p-1">
+                                    <label class="fw-bold pt-2 pb-3">&lt;Secretária&gt;</label>
+                                    <p class="pt-4">Texto com a primeira resposta</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Bloco principal com nova dúvida/resposta -->
+                <div class="col-md-7">
+                    <div class="p-4 bg-light rounded shadow ask-form">
+                        <form>
+                            <!-- Nova pergunta -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">&lt;Usuário&gt;</label>
+                                <div class="form-control">Texto com a dúvida atual</div>
+                            </div>
+
+                            <!-- Resposta -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">&lt;Secretaria&gt;</label>
+                                <div class="form-control bg-white">Texto com a resposta da dúvida</div>
+                            </div>
+
+                            <!-- Campo para dúvida -->
+                            <div class="mb-4">
+                                <textarea class="form-control" rows="4" placeholder="Digite a sua nova dúvida"></textarea>
+                                <small class="form-text text-muted text-end">&lt;Usuário&gt;</small>
+                            </div>
+                            
+                            <!-- Botões -->
+                            <div class="d-flex justify-content-between">
+                                <button class="btn-link">Finalizar dúvida</button>
+                                <button class="btn-link-secondary">Ainda não estou satisfeito</button>
+                            </div>
+                            
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

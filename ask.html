@@ -1,0 +1,53 @@
+<!-- Conteúdo principal -->
+<div class="container mt-5">
+    <h5 class="text-center mb-5">Preencha corretamente as informações e envie a sua dúvida</h5>
+
+    <div class="row">
+        <!-- Balão de aviso -->
+        <div class="col-md-3 mb-4 mx-auto my-0">
+            <div class="p-4 border rounded shadow-sm notice">
+                <strong>AVISO</strong>
+                <p class="small">Exemplo: sua dúvida pode levar até 48h para ser respondida.</p>
+            </div>
+
+            <div class=" mx-auto mt-5 text-center btn-ask">
+                <a href="askReply.html">Dúvidas já enviadas</a>
+            </div>
+
+        </div>
+
+        <!-- Formulário -->
+        <div class="col-md-7 ask-form">
+            <div class="p-4 bg-light rounded shadow">
+                <form>
+                    <div class="mb-4">
+                        <select class="form-select" required>
+                            <option value="" disabled selected>Categoria</option>
+                            <option value="financeiro">Financeiro</option>
+                            <option value="matrícula">Matrícula</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <select class="form-select" required>
+                            <option value="" disabled selected>Assunto</option>
+                            <option value="horário">Horário de aula</option>
+                            <option value="documentos">Documentação</option>
+                            <option value="atestado">Atestado</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <textarea class="form-control" rows="4" placeholder="Digite a sua dúvida"></textarea>
+                        <small class="form-text text-muted text-end">&lt;Usuário&gt;</small>
+                    </div>
+
+                    <div class="d-grid mt-5">
+                        <button type="submit" class="btn-link">Enviar dúvida</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

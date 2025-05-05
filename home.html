@@ -1,162 +1,83 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Vortex Secretary</title>
-
-    <!-- Incluindo o Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Link para o arquivo CSS personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- JS para animações -->
-    <script src="script.js"></script>
-
-    <!-- Link para o CDN do Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Header -->
-            <header class="header">
-                <a href="../vortex-secretary-web/index.html">
-                    <img src="img/fatec_logo.png" alt="Logo">
-                </a>
-                <div class="user-dropdown">
-                    <button class="user-photo" onclick="toggleDropdown(event)">
-                        <img src="img/123.jpg" alt="">
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="../vortex-secretary-web/profile.html">Seu perfil</a>
-                        <a href="../vortex-secretary-web/index.html">Sair da conta</a>
-                    </div>
+<!-- Conteúdo principal -->
+<div class="container-fluid main-content">
+    <div class="row">
+        <!-- Coluna Esquerda - Formulários -->
+        <div class="col-lg-7 mb-4">
+            <div class="form-section">
+                <h4 class="fw-bold mb-4">FORMULÁRIOS</h4>
+                <div class="form-item">
+                    <span>Formulário 1</span>
+                    <a href="#" class="btn btn-sm btn-link">Acessar</a>
                 </div>
-            </header>
-        </div>
-
-        <div class="row container-fluid">
-            <!-- Main Content -->
-            <div class="main d-flex justify-content-center">
-                <div class="form-section col-lg-7">
-                    <h2>Formulários</h2>
-                    <div class="form-links-container">
-                        <div class="form-item">
-                            <span>Formulário 1</span>
-                            <a href="#" class="btn-link">Acessar</a>
-                        </div>
-                        <div class="form-item">
-                            <span>Formulário 2</span>
-                            <a href="#" class="btn-link">Acessar</a>
-                        </div>
-                        <div class="form-item">
-                            <span>Formulário 3</span>
-                            <a href="#" class="btn-link">Acessar</a>
-                        </div>
-                        <!-- outros links aqui -->
-                    </div>
+                <div class="form-item">
+                    <span>Formulário 2</span>
+                    <a href="#" class="btn btn-sm btn-link">Acessar</a>
                 </div>
-
-                <div class="aside-section col-lg-4">
-                    <h2>Quadro de Avisos</h2>
-                    <div class="carousel">
-                        <div class="carousel-images">
-                            <img src="img/gato01.jpeg" alt="Aviso 1" class="carousel-image active">
-                            <img src="img/gato02.jpeg" alt="Aviso 2" class="carousel-image">
-                            <img src="img/gato03.jpeg" alt="Aviso 3" class="carousel-image">
-                            <img src="img/gato04.jpeg" alt="Aviso 4" class="carousel-image">
-                        </div>
-                        <div class="carousel-indicators">
-                            <span class="indicator active" onclick="showImage(0)"></span>
-                            <span class="indicator" onclick="showImage(1)"></span>
-                            <span class="indicator" onclick="showImage(2)"></span>
-                            <span class="indicator" onclick="showImage(3)"></span>
-                        </div>
-                    </div>
+                <div class="form-item">
+                    <span>Formulário 3</span>
+                    <a href="#" class="btn btn-sm btn-link">Acessar</a>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <!-- Footer com modelo bootstrap -->
-            <footer class="footer">
-                
-                <!-- Redes sociais -->
-                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                    <div class="me-5 d-none d-lg-block">
-                        <span>Conecte-se conosco nas redes sociais:</span>
+        <!-- Coluna Direita - Dúvidas -->
+        <div class="col-lg-5">
+            <div class="aside-section mb-3">
+                <h4 class="fw-bold mb-5">DÚVIDAS FREQUENTES</h4>
+
+                <div id="faqCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <!-- Bolinhas indicadoras -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#faqCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#faqCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#faqCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
                     </div>
-                    <div>
-                        <a href="https://www.facebook.com/ftcguarulhos/" class="me-4 text-reset">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://x.com/Fatec_Guarulhos" class="me-4 text-reset">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.fatecguarulhos.edu.br/secretaria/contato/" class="me-4 text-reset">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="https://www.instagram.com/fatec_guarulhos/" class="me-4 text-reset">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/school/fatecgru/posts/?feedView=all" class="me-4 text-reset">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </section>
 
-                <!-- Links -->
-                <section class="links-section">
-                    <div class="container text-center text-md-start mt-5">
-                        <div class="row mt-3">
-                            
-                            <!-- Sobre -->
-                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 sobre">
-                                <h6 class="text-uppercase fw-bold mb-4">
-                                    <i class="fas fa-gem me-3"></i>VORTEX SECRETARY
-                                </h6>
-                                <p>
-                                    Site desenvolvido para solicitações de documentos institucionais da FATEC Guarulhos.<br>
-                                    A FATEC Guarulhos é uma instituição de ensino superior pública, reconhecida pela qualidade acadêmica e pelo desenvolvimento de profissionais capacitados para o mercado de trabalho.
-                                </p>
-                            </div>
-
-                            <!-- Links úteis -->
-                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">Links úteis</h6>
-                                <p>
-                                    <a href="https://www.google.com/search?q=fatec+guarulhos" class="text-reset">Site Fatec Gru</a>
-                                </p>
-                                <p>
-                                    <a href="https://siga.cps.sp.gov.br/aluno/login.aspx" class="text-reset">Siga</a>
-                                </p>
-                            </div>
-
-                            <!-- Contato -->
-                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">Contato</h6>
-                                <p><i class="fas fa-home me-3"></i> R. Cristóbal Cláudio Elilo, 88 - Parque Cecap, Guarulhos - SP, 07190-065</p>
-                                <p><i class="fas fa-envelope me-3"></i> secretaria@fatecguarulhos.edu.br</p>
-                                <p><i class="fas fa-phone me-3"></i> (11) 2229-0392</p>
-                                <p><i class="fas fa-print me-3"></i> (11) 2229-0393</p>
-                            </div>
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <h5 class="fw-bold mb-5">TÍTULO DA DÚVIDA 1</h5>
+                            <p>Resposta da dúvida 1.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h5 class="fw-bold mb-5">TÍTULO DA DÚVIDA 2</h5>
+                            <p>Resposta da dúvida 2.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h5 class="fw-bold mb-5">TÍTULO DA DÚVIDA 3</h5>
+                            <p>Resposta da dúvida 3.</p>
                         </div>
                     </div>
-                </section>
 
-                <!-- Copyright -->
-                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                    © 2024 Copyright Fatec Guarulhos - Vortex
+                    <!-- Controles (setinhas) -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#faqCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#faqCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
                 </div>
-            </footer>
+
+                <div class="mt-2 d-flex justify-content-center">
+                    <button class="btn-link">VER MAIS</button>
+                </div>
+            </div>
+
+            <div class="send-question mt-4">
+                <h5 class="fw-bold">POSSUI UMA DÚVIDA ESPECÍFICA?</h5>
+                <div class="d-flex mt-4 mb-2 justify-content-center">
+                    <button class="btn-link mt-2">ENVIAR DÚVIDA</button>
+                </div>
+            </div>
         </div>
 
     </div>
-</body>
-
-</html>
+</div>
+</div>
